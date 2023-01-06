@@ -7,7 +7,7 @@ namespace NinjaPixelWeb.Steps.SideBar
     {
         public static void CheckUsuario()
         {
-            Assert.IsTrue(Driver.FindElement(SidebarPage.NomeUsuario).Displayed, "Uesley");
+            Assert.IsTrue(Driver.FindElement(SidebarPage.NomeUsuario).Displayed);
         }
     }
 }

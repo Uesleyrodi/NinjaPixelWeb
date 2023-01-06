@@ -84,7 +84,6 @@ namespace NinjaPixelWeb.Feature
             LoginSteps.SetCredeciais("uesley@ninjapixel.com", "pwd123");
             LoginSteps.ClickEntrar();
             SidebarSteps.CheckUsuario();
-            
         }
     }
 }
