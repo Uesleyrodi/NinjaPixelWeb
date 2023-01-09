@@ -62,7 +62,7 @@
     <Compile Include="PageObjects\SideBar\SidebarPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\Login\LoginSteps.cs" />
-    <Compile Include="Steps\SideBar\SidebarSteps.cs" />
+    <Compile Include="Steps\SideBar\RightSideBar.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

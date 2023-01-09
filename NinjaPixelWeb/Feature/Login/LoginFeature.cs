@@ -74,7 +74,7 @@ namespace NinjaPixelWeb.Feature
         }
 
         [TestMethod]
-        public void UsuarioLogado()
+        public void UsuarioLogadoTest()
         {
             Console.WriteLine("Dado: Que usuário deseja logar na aplicação");
             Console.WriteLine("E: Preencher as credenciais de acessos");
@@ -83,7 +83,7 @@ namespace NinjaPixelWeb.Feature
 
             LoginSteps.SetCredeciais("uesley@ninjapixel.com", "pwd123");
             LoginSteps.ClickEntrar();
-            SidebarSteps.CheckUsuario();
+            RightSideBar.CheckNomeUsuario();
         }
     }
 }
