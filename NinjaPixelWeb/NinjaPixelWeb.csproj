@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Feature\Login\LoginFeature.cs" />
     <Compile Include="Feature\SideBar\MenuLateralDireitoFeature.cs" />
+    <Compile Include="Feature\SideBar\MenuTopoFeature.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="PageObjects\CadastroProdutos\CadastroProdutosPage.cs" />
     <Compile Include="PageObjects\Login\LoginPage.cs" />
