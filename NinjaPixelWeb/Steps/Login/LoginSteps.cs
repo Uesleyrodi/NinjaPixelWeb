@@ -49,5 +49,12 @@ namespace NinjaPixelWeb.Steps
         {
             Driver.FindElement(LoginPage.BtnEntrar).Click();
         }
+
+        public static void Login(string email, string senha)
+        {
+            Driver.FindElement(LoginPage.Email).SendKeys(email);
+            Driver.FindElement(LoginPage.Senha).SendKeys(senha);
+            ClickEntrar();
+        }
     }
 }
