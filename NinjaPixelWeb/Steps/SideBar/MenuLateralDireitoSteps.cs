@@ -1,15 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NinjaPixelWeb.PageObjects.SideBar;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
-using System;
-using System.Linq;
 
 namespace NinjaPixelWeb.Steps.SideBar
 {
     public class MenuLateralDireitoSteps : Hooks
     {
-        private static object wait;
 
         public static void CheckNomeUsuario()
         {
