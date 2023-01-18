@@ -19,7 +19,7 @@ namespace NinjaPixelWeb.Feature
 
             LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
             MenuTopoSteps.ClickCadastroProduto();
-            CadastroProdutosSteps.CheckNomeFuncionalidadeCadastro();
+            ListagemProdutosSteps.CheckNomeFuncionalidadeCadastro();
         }
 
         [TestMethod]
@@ -45,7 +45,7 @@ namespace NinjaPixelWeb.Feature
             LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
             MenuTopoSteps.ClickitemNavegacao();
             MenuTopoSteps.ClickItemCadastroProduto();
-            CadastroProdutosSteps.CheckNomeFuncionalidadeCadastro();
+            ListagemProdutosSteps.CheckNomeFuncionalidadeCadastro();
         }
 
         [TestMethod]
