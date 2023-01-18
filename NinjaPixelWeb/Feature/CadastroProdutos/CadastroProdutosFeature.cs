@@ -66,12 +66,16 @@ namespace NinjaPixelWeb.Feature
         }
 
         [TestMethod]
-        public void CadastroSucesso()
+        public void CadastroSucessoTest()
         {
             Console.WriteLine("Dado: Que acesse a funcionalidade 'Cadastro de Produtos'");
             Console.WriteLine("E: Preencher os campos: @Nome, @Categoria, @Preço, @Produtores, @Descrição, @UploadDeImagem");
             Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
             Console.WriteLine("Então: O sistema deverá validar as informações e exibir o dado na listagem de 'Cadastro de Produtos'.");
+
+            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            CadastroProdutosSteps.ClickNovoProduto();
+            CadastroProdutosSteps.SetCadastroSucesso();
         }
     }
 }

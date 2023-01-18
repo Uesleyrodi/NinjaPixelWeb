@@ -45,6 +45,17 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
             ClickCadastrar();
         }
 
+        public static void SetCadastroSucesso()
+        {
+            Driver.FindElement(CadastroProdutosPage.Nome).SendKeys("Donkey Kong");
+            Driver.FindElement(CadastroProdutosPage.Preco).SendKeys("250,00");
+            SetProdutores();
+            SetCategoria();
+            Driver.FindElement(CadastroProdutosPage.Descricao).SendKeys("O jogo continua a partir da jogabilidade de plataforma de rolagem lateral da série Donkey Kong Country e vê Donkey Kong e seus amigos viajando por sete ilhas diferentes para derrotar os Snowmads.");
+            Driver.FindElement(CadastroProdutosPage.Upload).SendKeys("C:\\NinjaPixelWeb\\NinjaPixelWeb\\Deploy\\Capa_Donkey_Kong.png");
+            ClickCadastrar();
+        }
+
         public static void ClickNovoProduto()
         {
             Driver.FindElement(CadastroProdutosPage.BtnNovoProduto).Click();
@@ -59,7 +70,7 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
         {
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.TituloFuncionalidade).Displayed, "Novo Produto");
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Nome).Displayed);
-            //Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.SelecaoCategoria).Displayed);
+            Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Categoria).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Preco).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Produtores).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Descricao).Displayed);
