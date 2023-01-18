@@ -77,5 +77,19 @@ namespace NinjaPixelWeb.Feature
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetCadastroSucesso();
         }
+
+        [TestMethod]
+        public void CadastroDuplicado()
+        {
+            Console.WriteLine("Dado: Que acesse a funcionalidade 'Cadastro de Produtos'");
+            Console.WriteLine("E: Preencher os campos com dados já cadastrados: @Nome, @Categoria, @Preço, @Produtores, @Descrição, @UploadDeImagem");
+            Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
+            Console.WriteLine("Então: O sistema deverá validar as informações e impedir a inclusão exibir mensagem de erro.");
+
+            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            CadastroProdutosSteps.ClickNovoProduto();
+            CadastroProdutosSteps.SetCadastroSucesso();
+            CadastroProdutosSteps.CheckMensagemCadastroDuplicado();
+        }
     }
 }

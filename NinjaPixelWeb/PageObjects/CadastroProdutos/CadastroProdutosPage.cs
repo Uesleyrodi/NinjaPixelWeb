@@ -24,6 +24,7 @@ namespace NinjaPixelWeb.PageObjects.CadastroProdutos
         public static By MsgNomeEmBranco = By.XPath("//*[@id=\"product-form\"]/div[2]/div[1]/div[1]/span");
         public static By MsgCategoriaEmBranco = By.XPath("//*[@id=\"product-form\"]/div[2]/div[1]/div[1]/span");
         public static By MsgPrecoEmBranco = By.XPath("//*[@id=\"product-form\"]/div[2]/div[1]/div[1]/span");
+        public static By MsgProdutoDuplicado = By.CssSelector("#product-form > div.card-body > div.col-sm-12 > div.alert.alert-danger.alert-dismissible.fade.show > span");
 
         #endregion
 

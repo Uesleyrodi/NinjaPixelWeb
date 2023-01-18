@@ -93,5 +93,10 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
         {
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.MsgPrecoEmBranco).Displayed, "Oops - Informe o preço também!");
         }
+
+        public static void CheckMensagemCadastroDuplicado()
+        {
+            Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.MsgProdutoDuplicado).Displayed, "Oops - Este produto já foi cadastrado!");
+        }
     }
 }
