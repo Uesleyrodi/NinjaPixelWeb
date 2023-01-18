@@ -3,6 +3,7 @@ using NinjaPixelWeb.Steps;
 using NinjaPixelWeb.Steps.CadastroProdutos;
 using NinjaPixelWeb.Steps.SideBar;
 using System;
+using System.Threading;
 
 namespace NinjaPixelWeb.Feature
 {
@@ -49,6 +50,22 @@ namespace NinjaPixelWeb.Feature
             ListagemProdutosSteps.CheckMensagemApagarProduto();
             ListagemProdutosSteps.ClickNao();
             ListagemProdutosSteps.CheckProdutoCadastrado();
+        }
+
+        [TestMethod]
+        public void RemoverCadastroProdutos()
+        {
+            Console.WriteLine("Dado: Que usuário tenha finalizado cadastro de produtos");
+            Console.WriteLine("E: Clicar no ícone [Apagar Produto]");
+            Console.WriteLine("Quando: Clicar na opção [SIM!]");
+            Console.WriteLine("Então: O sistema deverá remover o produto da listagem.");
+
+            LoginSteps.Login("papito@ninjapixel.com", "pwd123");
+            MenuLateralDireitoSteps.ClickMenuCadastro();
+            ListagemProdutosSteps.ClickApagarProduto();
+            ListagemProdutosSteps.ClickSim();
+            Thread.Sleep(2000);
+            ListagemProdutosSteps.CheckMensagemProdutoNaoEncontrado();
         }
     }
 }
