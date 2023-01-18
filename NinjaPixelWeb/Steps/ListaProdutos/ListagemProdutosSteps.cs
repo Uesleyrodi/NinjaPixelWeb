@@ -14,5 +14,13 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
         {
             Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.MsgProdutoNaoEncontradoLista).Displayed, "Puxa! não encontramos nada aqui :(");
         }
+
+        public static void CheckProdutoCadastrado()
+        {
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormNome).Displayed);
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormCategoria).Displayed);
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormDescricao).Displayed);
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormPreco).Displayed);
+        }
     }
 }

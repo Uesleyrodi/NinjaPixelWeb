@@ -76,6 +76,7 @@ namespace NinjaPixelWeb.Feature
             LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetCadastroSucesso();
+            ListagemProdutosSteps.CheckProdutoCadastrado();
         }
 
         [TestMethod]
