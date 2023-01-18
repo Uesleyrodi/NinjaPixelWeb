@@ -13,6 +13,7 @@ namespace NinjaPixelWeb.PageObjects.CadastroProdutos
         #region Mensagens
 
         public static By MsgProdutoNaoEncontradoLista = By.XPath("/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[2]/div[3]/span");
+        public static By MsgApagarProduto = By.CssSelector("#swal2-title");
 
         #endregion
 
@@ -27,6 +28,8 @@ namespace NinjaPixelWeb.PageObjects.CadastroProdutos
         public static By NovoCadastroProdutos = By.XPath("/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div[1]/h4/button/i");
         public static By BtnPesquisar = By.CssSelector("#search-product");
         public static By BtnApagarProduto = By.CssSelector("body > div:nth-child(1) > div.wrapper > div.main-panel > div > div > div > div > div > div.card-body > div.table-full-width.table-products > table > tbody > tr > td.td-actions.text-right > button > i");
+        public static By BtnSim = By.CssSelector("body > div.swal2-container.swal2-center.swal2-fade.swal2-shown > div > div.swal2-buttonswrapper > button.swal2-confirm.btn.btn-success.btn-fill");
+        public static By BtnNao = By.CssSelector("body > div.swal2-container.swal2-center.swal2-fade.swal2-shown > div > div.swal2-buttonswrapper > button.swal2-cancel.btn.btn-danger.btn-fill");
 
         #endregion
 

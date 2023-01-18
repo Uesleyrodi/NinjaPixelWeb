@@ -22,5 +22,27 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
             Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormDescricao).Displayed);
             Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.FormPreco).Displayed);
         }
+
+        public static void CheckMensagemApagarProduto()
+        {
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.MsgApagarProduto).Displayed, "Deseja apagar este produto?");
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.BtnSim).Displayed);
+            Assert.IsTrue(Driver.FindElement(ListagemProdutosPage.BtnNao).Displayed);
+        }
+
+        public static void ClickApagarProduto()
+        {
+            Driver.FindElement(ListagemProdutosPage.BtnApagarProduto).Click();
+        }
+
+        public static void ClickNao()
+        {
+            Driver.FindElement(ListagemProdutosPage.BtnNao).Click();
+        }
+
+        public static void ClickSim()
+        {
+            Driver.FindElement(ListagemProdutosPage.BtnSim).Click();
+        }
     }
 }
