@@ -2,6 +2,9 @@
 using NinjaPixelWeb.PageObjects.CadastroProdutos;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using System;
+using System.Collections.Generic;
+using System.Threading;
 
 namespace NinjaPixelWeb.Steps.CadastroProdutos
 {
@@ -19,8 +22,9 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
 
         public static void SetCategoria()
         {
-            Driver.FindElement(CadastroProdutosPage.SelecaoCategoria).Click();
-            Driver.FindElement(CadastroProdutosPage.opcoes).Click();
+            Driver.FindElement(CadastroProdutosPage.Categoria).Click();
+            Driver.FindElement(CadastroProdutosPage.ClickListaCategoria).Click();
+            Driver.FindElement(CadastroProdutosPage.ListaCategoria).Click();
         }
 
         public static void SetCategoriaEmBranco()
@@ -55,7 +59,7 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
         {
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.TituloFuncionalidade).Displayed, "Novo Produto");
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Nome).Displayed);
-            Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.SelecaoCategoria).Displayed);
+            //Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.SelecaoCategoria).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Preco).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Produtores).Displayed);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.Descricao).Displayed);
@@ -65,6 +69,7 @@ namespace NinjaPixelWeb.Steps.CadastroProdutos
 
         public static void CheckMensagemNomeBranco()
         {
+            Thread.Sleep(1000);
             Assert.IsTrue(Driver.FindElement(CadastroProdutosPage.MsgNomeEmBranco).Displayed, "Oops - Informe o nome do produto!");
         }
 

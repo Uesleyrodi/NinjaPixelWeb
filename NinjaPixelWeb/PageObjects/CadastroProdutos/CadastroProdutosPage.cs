@@ -8,12 +8,16 @@ namespace NinjaPixelWeb.PageObjects.CadastroProdutos
 
         #region Formulário Novo Produto
 
+        public static By Categoria = By.CssSelector("input[placeholder=\"Gategoria\"]");
+        public static By ListaCategoria = By.CssSelector("body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li.el-select-dropdown__item.select-primary.hover > span");
+        public static By ClickListaCategoria = By.CssSelector(".el-scrollbar__view");
+
+
         public static By Nome = By.XPath("//*[@id=\"product-form\"]/div[2]/div[2]/div[1]/div[1]/div/div/div/div/input");
-        public static By SelecaoCategoria = By.CssSelector("input[placeholder=Gategoria]");
-        public static By opcoes = By.CssSelector("body > div.el-select-dropdown.el-popper > div.el-scrollbar > div.el-select-dropdown__wrap.el-scrollbar__wrap > ul > li.el-select-dropdown__item.select-primary.hover");
+
         public static By Preco = By.XPath("//*[@id=\"product-form\"]/div[2]/div[2]/div[1]/div[2]/div/div/div[2]/div/input");
-        public static By Produtores = By.XPath("//*[@id=\"product-form\"]/div[2]/div[2]/div[1]/div[3]/div/input");
-        public static By Descricao = By.XPath("//*[@id=\"product-form\"]/div[2]/div[2]/div[1]/div[4]/div/textarea");
+        public static By Produtores = By.CssSelector(".producers");
+        public static By Descricao = By.CssSelector("textarea[name=\"description\"]");
         public static By Upload = By.XPath("//*[@id=\"upcover-box\"]/div/img");
         #endregion
 
@@ -28,7 +32,7 @@ namespace NinjaPixelWeb.PageObjects.CadastroProdutos
         #region Botões
 
         public static By BtnNovoProduto = By.XPath("/html/body/div[1]/div[2]/div[2]/div/div/div/div/div/div[1]/div/div[1]/h4/button/i");
-        public static By BtnCadastrar = By.CssSelector("button[id=\"create-product\"]");
+        public static By BtnCadastrar = By.CssSelector("#create-product");
         
         #endregion
     }
