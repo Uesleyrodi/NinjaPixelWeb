@@ -56,20 +56,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature\CadastroProdutos\CadastroProdutosFeature.cs" />
-    <Compile Include="Feature\ListaProdutos\ListaProdutosFeature.cs" />
     <Compile Include="Feature\Login\LoginFeature.cs" />
     <Compile Include="Feature\SideBar\MenuLateralDireitoFeature.cs" />
     <Compile Include="Feature\SideBar\MenuTopoFeature.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="PageObjects\CadastroProdutos\CadastroProdutosPage.cs" />
-    <Compile Include="PageObjects\ListaProdutos\ListagemProdutosPage.cs" />
     <Compile Include="PageObjects\Login\LoginPage.cs" />
     <Compile Include="PageObjects\SideBar\MenuLateralDireitoPage.cs" />
     <Compile Include="PageObjects\SideBar\MenuTopoPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steps\CadastroProdutos\CadastroProdutosSteps.cs" />
-    <Compile Include="Steps\ListaProdutos\ListagemProdutosSteps.cs" />
     <Compile Include="Steps\Login\LoginSteps.cs" />
     <Compile Include="Steps\SideBar\MenuLateralDireitoSteps.cs" />
     <Compile Include="Steps\SideBar\MenuTopoSteps.cs" />
@@ -78,7 +74,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Deploy\Capa_Donkey_Kong.png" />
     <Content Include="Deploy\chromedriver.exe" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
