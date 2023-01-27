@@ -63,7 +63,7 @@ namespace NinjaPixelWeb.Feature
         }
 
         [TestMethod]
-        public void ItemNavegacaoSaiTest()
+        public void DeslogarAplicacaoTest()
         {
             Console.WriteLine("Dado: Que deseja deslogar na aplicação");
             Console.WriteLine("E: Clicar no ícone [Item de Navegação]");

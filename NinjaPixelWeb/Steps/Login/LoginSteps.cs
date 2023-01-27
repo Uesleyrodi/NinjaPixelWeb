@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NinjaPixelWeb.PageObjects;
+using System;
 
 namespace NinjaPixelWeb.Steps
 {
@@ -8,8 +9,8 @@ namespace NinjaPixelWeb.Steps
         public static void CheckLogin()
         {
             Assert.IsTrue(Driver.FindElement(LoginPage.ImgLogo).Displayed);
-            Assert.IsTrue(Driver.FindElement(LoginPage.TituloFuncionalidade).Displayed, "Login");
-            Assert.IsTrue(Driver.FindElement(LoginPage.Email).Displayed);
+            Assert.AreEqual("Login", (Driver.FindElement(LoginPage.TituloFuncionalidade).Text));
+            Console.WriteLine(Driver.FindElement(LoginPage.TituloFuncionalidade).Text);
             Assert.IsTrue(Driver.FindElement(LoginPage.Senha).Displayed);
             Assert.IsTrue(Driver.FindElement(LoginPage.BtnEntrar).Displayed);
         }
