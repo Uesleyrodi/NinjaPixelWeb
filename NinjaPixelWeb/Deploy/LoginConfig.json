@@ -5,6 +5,6 @@
   "Email": "uesley@ninjapixel.com",
 
   //Mensagens de Erro Login
-  "MsgInformeEmail": "Opps. Informe o seu email!"
-  
+  "MsgInformeEmail": "Opps. Informe o seu email!",
+  "MsgInformeSenha": "Opps. Informe a sua senha!"
 }

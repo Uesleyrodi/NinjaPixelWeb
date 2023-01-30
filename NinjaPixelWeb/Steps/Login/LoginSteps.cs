@@ -55,7 +55,17 @@ namespace NinjaPixelWeb.Steps
 
         public static void CheckMsgInformeSenha()
         {
-            Assert.IsTrue(Driver.FindElement(LoginPage.MsgInformeSenha).Displayed, "Opps. Informe a sua senha!");
+            VerificaArquivoExistente();
+
+            try
+            {
+                string Mensagem = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("MsgInformeSenha").ToString();
+                Assert.AreEqual(Mensagem, Driver.FindElement(LoginPage.MsgInformeSenha).Text);
+            }
+            catch(Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void CheckMsgInvalido()
@@ -71,10 +81,7 @@ namespace NinjaPixelWeb.Steps
 
         public static void SetEmail()
         {
-            if (!File.Exists("Deploy\\LoginConfig.json"))
-            {
-                Assert.Fail("LoginConfig.json não foi encontrado");
-            }
+            VerificaArquivoExistente();
 
             try
             {
@@ -117,6 +124,14 @@ namespace NinjaPixelWeb.Steps
             Driver.FindElement(LoginPage.Email).SendKeys(email);
             Driver.FindElement(LoginPage.Senha).SendKeys(senha);
             ClickEntrar();
+        }
+
+        public static void VerificaArquivoExistente()
+        {
+            if (!File.Exists("Deploy\\LoginConfig.json"))
+            {
+                Assert.Fail("LoginConfig.json não foi encontrado");
+            }
         }
     }
 }
