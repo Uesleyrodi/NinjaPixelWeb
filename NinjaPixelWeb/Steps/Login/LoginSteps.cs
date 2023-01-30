@@ -70,7 +70,16 @@ namespace NinjaPixelWeb.Steps
 
         public static void CheckMsgInvalido()
         {
-            Assert.IsTrue(Driver.FindElement(LoginPage.MsgInvalido).Displayed, "Usuário e/ou senha inválidos");
+            VerificaArquivoExistente();
+            try
+            {
+                string Mensagem = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("MsgInvalido").ToString();
+                Assert.AreEqual(Mensagem, Driver.FindElement(LoginPage.MsgInvalido).Text);
+            }
+            catch(Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void SetCredeciais(string email, string senha)
