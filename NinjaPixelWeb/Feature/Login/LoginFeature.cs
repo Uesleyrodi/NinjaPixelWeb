@@ -66,7 +66,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: clicar no botão [Entrar]");
             Console.WriteLine("Então: O sistema deverá informar mensagem de erro ao usuário, mantê-lo na tela de Login.");
 
-            LoginSteps.SetCredeciais("uesley@teste.com", "pwd123");
+            LoginSteps.SetCredenciaisInvalidas();
             LoginSteps.ClickEntrar();
             LoginSteps.CheckMsgInvalido();
         }
@@ -79,7 +79,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: clicar no botão [Entrar]");
             Console.WriteLine("Então: O sistema deverá autenticar as credenciais de acesso e direcionar usuário a área logada.");
 
-            LoginSteps.SetCredeciais("uesley@ninjapixel.com", "pwd123");
+            //LoginSteps.SetCredeciais("uesley@ninjapixel.com", "pwd123");
             LoginSteps.ClickEntrar();
             MenuLateralDireitoSteps.CheckNomeUsuario();
         }

@@ -82,10 +82,22 @@ namespace NinjaPixelWeb.Steps
             }
         }
 
-        public static void SetCredeciais(string email, string senha)
+        public static void SetCredenciaisInvalidas()
         {
-            Driver.FindElement(LoginPage.Email).SendKeys(email);
-            Driver.FindElement(LoginPage.Senha).SendKeys(senha);
+            VerificaArquivoExistente();
+            
+            try
+            {
+                string EmailInvalido = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("EmailInvalido").ToString();
+                string SenhalInvalido = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("SenhaInvalida").ToString();
+
+                Driver.FindElement(LoginPage.Email).SendKeys(EmailInvalido);
+                Driver.FindElement(LoginPage.Senha).SendKeys(SenhalInvalido);
+            }
+            catch(Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void SetEmail()

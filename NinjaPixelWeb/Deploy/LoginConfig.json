@@ -4,6 +4,9 @@
   "Senha": "pwd123",
   "Email": "uesley@ninjapixel.com",
 
+  "EmailInvalido": "uesley@teste.com",
+  "SenhaInvalida": "pwd123",
+
   //Mensagens de Erro Login
   "MsgInformeEmail": "Opps. Informe o seu email!",
   "MsgInformeSenha": "Opps. Informe a sua senha!",
