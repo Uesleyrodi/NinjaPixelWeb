@@ -39,8 +39,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: clicar no botão [Entrar]");
             Console.WriteLine("Então: O sistema deverá informar mensagem de erro ao usuário, mantê-lo na tela de Login.");
 
-            LoginSteps.SetEmail("");
-            LoginSteps.SetSenha("pwd123");
+            LoginSteps.SetEmail();
             LoginSteps.ClickEntrar();
             LoginSteps.CheckMsgInformeSenha();
         }
@@ -54,10 +53,9 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: clicar no botão [Entrar]");
             Console.WriteLine("Então: O sistema deverá informar mensagem de erro ao usuário, mantê-lo na tela de Login.");
 
-            LoginSteps.SetEmail("uesley@ninjapixel.com");
-            LoginSteps.SetSenha("");
+            LoginSteps.SetSenha();
             LoginSteps.ClickEntrar();
-            LoginSteps.CheckMsgInformeSenha();
+            LoginSteps.CheckMsgInformeEmail();
         }
 
         [TestMethod]

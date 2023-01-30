@@ -48,7 +48,7 @@ namespace NinjaPixelWeb
             }
             catch(Exception e) 
             {
-                Assert.Fail($"Não foi possível recuperar as informações do arquivo HookConfig.json {e.Message} {e.StackTrace} {e.InnerException}");
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
             }
         }
 

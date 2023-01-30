@@ -27,3 +27,4 @@ C:\NinjaPixelWeb\NinjaPixelWeb\obj\Debug\NinjaPixelWeb.pdb
 C:\NinjaPixelWeb\NinjaPixelWeb\bin\Debug\Newtonsoft.Json.dll
 C:\NinjaPixelWeb\NinjaPixelWeb\bin\Debug\Newtonsoft.Json.xml
 C:\NinjaPixelWeb\NinjaPixelWeb\bin\Debug\Deploy\LoginConfig.json
+C:\NinjaPixelWeb\NinjaPixelWeb\bin\Debug\Deploy\HookConfig.json

@@ -1,4 +1,10 @@
 {
   "TituloFuncionalidade": "Login",
-  "BotaoEntrar" :  "ENTRAR"
+  "BotaoEntrar": "ENTRAR",
+  "Senha": "pwd123",
+  "Email": "uesley@ninjapixel.com",
+
+  //Mensagens de Erro Login
+  "MsgInformeEmail": "Opps. Informe o seu email!"
+  
 }

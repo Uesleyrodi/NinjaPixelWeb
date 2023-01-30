@@ -78,7 +78,9 @@
     <Compile Include="Steps\SideBar\MenuTopoSteps.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Deploy\HookConfig.json" />
+    <None Include="Deploy\HookConfig.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Deploy\LoginConfig.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

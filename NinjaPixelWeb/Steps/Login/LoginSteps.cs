@@ -27,7 +27,7 @@ namespace NinjaPixelWeb.Steps
             }
             catch (Exception e)
             {
-                Assert.Fail("Não foi possível recuperar informações do arquivo LoginConfig.json", e.Message, e.StackTrace, e.InnerException);
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
             }
 
             Assert.IsTrue(Driver.FindElement(LoginPage.ImgLogo).Displayed);
@@ -37,7 +37,20 @@ namespace NinjaPixelWeb.Steps
 
         public static void CheckMsgInformeEmail()
         {
-            Assert.IsTrue(Driver.FindElement(LoginPage.MsgInformeEmail).Displayed, "Opps. Informe o seu email!");
+            if(!File.Exists("Deploy\\LoginConfig.json"))
+            {
+                Assert.Fail("LoginConfig.json não foi encontrado");
+            }
+
+            try
+            {
+                string Mensagem = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("MsgInformeEmail").ToString();
+                Assert.AreEqual(Mensagem, Driver.FindElement(LoginPage.MsgInformeEmail).Text);
+            }
+            catch(Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void CheckMsgInformeSenha()
@@ -56,14 +69,42 @@ namespace NinjaPixelWeb.Steps
             Driver.FindElement(LoginPage.Senha).SendKeys(senha);
         }
 
-        public static void SetEmail(string email)
+        public static void SetEmail()
         {
-            Driver.FindElement(LoginPage.Email).SendKeys(email);
+            if (!File.Exists("Deploy\\LoginConfig.json"))
+            {
+                Assert.Fail("LoginConfig.json não foi encontrado");
+            }
+
+            try
+            {
+                string Email = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Email").ToString();
+                Driver.FindElement(LoginPage.Email).SendKeys(Email);
+            }
+
+            catch (Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
-        public static void SetSenha(string senha)
+        public static void SetSenha()
         {
-            Driver.FindElement(LoginPage.Senha).SendKeys(senha);
+            if(!File.Exists("Deploy\\LoginConfig.json"))
+            {
+                Assert.Fail("LoginConfig.json não foi encontrado");
+            }
+
+            try
+            {
+                string Senha = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Senha").ToString();
+                Driver.FindElement(LoginPage.Senha).SendKeys(Senha);
+            }
+
+            catch (Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void ClickEntrar()
