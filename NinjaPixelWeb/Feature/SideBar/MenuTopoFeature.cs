@@ -17,7 +17,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Acessar menu 'Cadastros de Produtos' no menu superior");
             Console.WriteLine("Então: O sistema deverá direcionar usuário a funcionalidade 'Cadastro de Produtos'");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickCadastroProduto();
             ListagemProdutosSteps.CheckNomeFuncionalidadeCadastro();
         }
@@ -29,7 +29,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no ícone [Item de Navegação]");
             Console.WriteLine("Então: o sistema deverá exibir as opções 'Cadastro de Produtos', 'API DOC' e 'Sair'.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickitemNavegacao();
             MenuTopoSteps.CheckItemNavegacao();
         }
@@ -42,7 +42,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar na opção [Cadastro de Produtos]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário a funcionalidade 'Cadastro de Produtos'");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickitemNavegacao();
             MenuTopoSteps.ClickItemCadastroProduto();
             ListagemProdutosSteps.CheckNomeFuncionalidadeCadastro();
@@ -56,7 +56,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar na opção [API DOC]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário ao link de API DOC.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickitemNavegacao();
             MenuTopoSteps.ClickItemApiDoc();
             MenuTopoSteps.CheckRedirecionamentoApi();
@@ -70,7 +70,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar na opção [Sair]");
             Console.WriteLine("Então: O sistema deverá deslogar sessão do usuário e direcionar ao 'Login'.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickitemNavegacao();
             MenuTopoSteps.ClickSair();
             LoginSteps.CheckLogin();

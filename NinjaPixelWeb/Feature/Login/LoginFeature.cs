@@ -79,8 +79,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: clicar no botão [Entrar]");
             Console.WriteLine("Então: O sistema deverá autenticar as credenciais de acesso e direcionar usuário a área logada.");
 
-            //LoginSteps.SetCredeciais("uesley@ninjapixel.com", "pwd123");
-            LoginSteps.ClickEntrar();
+            LoginSteps.Login();
             MenuLateralDireitoSteps.CheckNomeUsuario();
         }
     }

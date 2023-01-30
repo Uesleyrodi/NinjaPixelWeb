@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NinjaPixelWeb.PageObjects.SideBar;
+using System.Threading;
 
 namespace NinjaPixelWeb.Steps.SideBar
 {
@@ -8,6 +9,7 @@ namespace NinjaPixelWeb.Steps.SideBar
 
         public static void CheckNomeUsuario()
         {
+            Thread.Sleep(100);
             Assert.IsTrue(Driver.FindElement(MenuLateralDireitoPage.NomeUsuario).Displayed);
         }
 

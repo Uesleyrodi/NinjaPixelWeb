@@ -16,7 +16,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no ícone [Minimizar barra lateral]");
             Console.WriteLine("Então: O sistema deverá recuar barra de lateral.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuTopoSteps.ClickMinimizaMenuLateral();
             MenuLateralDireitoSteps.CheckRecuoMenuLateral();
         }
@@ -28,7 +28,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar na imagem [NinjaPixel]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário ao Blog do QA Ninja.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickImgBanner();
             MenuLateralDireitoSteps.CheckRedirecionamentoBanner();
         }
@@ -40,7 +40,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no menu [Cadastro]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário ao menu 'Cadastro'.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuCadastro();
             ListagemProdutosSteps.CheckNomeFuncionalidadeCadastro();
         }
@@ -52,7 +52,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no menu [API DOC]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário ao menu 'API DOC'");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuApi();
             MenuLateralDireitoSteps.CheckRedirecionamentoApi();
         }
@@ -64,7 +64,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no menu [BLOG]");
             Console.WriteLine("Então: O sistema deverá direcionar usuário ao Blog do QA Ninja.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickBlog();
             MenuLateralDireitoSteps.CheckRedirecionamentoBlog();
         }

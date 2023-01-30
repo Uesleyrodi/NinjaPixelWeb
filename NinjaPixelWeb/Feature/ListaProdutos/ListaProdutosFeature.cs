@@ -18,7 +18,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Acessar funcionalidade 'Cadastro de Produtos'");
             Console.WriteLine("Então: O sistema deverá exibir mensagem de Produtos não encontrados.");
 
-            LoginSteps.Login("papito@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuCadastro();
             ListagemProdutosSteps.CheckMensagemProdutoNaoEncontrado();
         }
@@ -31,7 +31,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Preencher campo @PesquisarPorNome e clicar em pesquisar");
             Console.WriteLine("Então: O sistema deverá exibir resultado da busca e exibir na grid");
 
-            LoginSteps.Login("papito@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuCadastro();
             ListagemProdutosSteps.CheckProdutoCadastrado();
         }
@@ -44,7 +44,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar botão @Não");
             Console.WriteLine("Então: O sistema deverá fechar a modal e retornar 'Listagem de Produtos'");
 
-            LoginSteps.Login("papito@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuCadastro();
             ListagemProdutosSteps.ClickApagarProduto();
             ListagemProdutosSteps.CheckMensagemApagarProduto();
@@ -60,7 +60,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar na opção [SIM!]");
             Console.WriteLine("Então: O sistema deverá remover o produto da listagem.");
 
-            LoginSteps.Login("papito@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             MenuLateralDireitoSteps.ClickMenuCadastro();
             ListagemProdutosSteps.ClickApagarProduto();
             ListagemProdutosSteps.ClickSim();

@@ -11,10 +11,7 @@ namespace NinjaPixelWeb.Steps
         public static void CheckLogin()
         {
             //Garantir que o arquivo LoginConfig.json exista
-            if (!File.Exists("Deploy\\LoginConfig.json"))
-            {
-                Assert.Fail("LoginConfig.json não foi encontrado");
-            }
+            VerificaArquivoExistente();
 
             //Necessário tratar possíveis excessões vindas da Leitura do arquivo, precidso garantir que as variáveis também exista.
             try
@@ -37,10 +34,7 @@ namespace NinjaPixelWeb.Steps
 
         public static void CheckMsgInformeEmail()
         {
-            if(!File.Exists("Deploy\\LoginConfig.json"))
-            {
-                Assert.Fail("LoginConfig.json não foi encontrado");
-            }
+            VerificaArquivoExistente();
 
             try
             {
@@ -85,7 +79,6 @@ namespace NinjaPixelWeb.Steps
         public static void SetCredenciaisInvalidas()
         {
             VerificaArquivoExistente();
-            
             try
             {
                 string EmailInvalido = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("EmailInvalido").ToString();
@@ -103,7 +96,6 @@ namespace NinjaPixelWeb.Steps
         public static void SetEmail()
         {
             VerificaArquivoExistente();
-
             try
             {
                 string Email = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Email").ToString();
@@ -118,17 +110,12 @@ namespace NinjaPixelWeb.Steps
 
         public static void SetSenha()
         {
-            if(!File.Exists("Deploy\\LoginConfig.json"))
-            {
-                Assert.Fail("LoginConfig.json não foi encontrado");
-            }
-
+            VerificaArquivoExistente();
             try
             {
                 string Senha = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Senha").ToString();
                 Driver.FindElement(LoginPage.Senha).SendKeys(Senha);
             }
-
             catch (Exception e)
             {
                 Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
@@ -140,11 +127,22 @@ namespace NinjaPixelWeb.Steps
             Driver.FindElement(LoginPage.BtnEntrar).Click();
         }
 
-        public static void Login(string email, string senha)
+        public static void Login()
         {
-            Driver.FindElement(LoginPage.Email).SendKeys(email);
-            Driver.FindElement(LoginPage.Senha).SendKeys(senha);
-            ClickEntrar();
+            VerificaArquivoExistente();
+            try
+            {
+                string Email = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Email").ToString();
+                string Senha = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("Senha").ToString();
+
+                Driver.FindElement(LoginPage.Email).SendKeys(Email);
+                Driver.FindElement(LoginPage.Senha).SendKeys(Senha);
+                ClickEntrar();
+            }
+            catch(Exception e)
+            {
+                Assert.Fail($"Não foi possível recuperar informações do arquivo LoginConfig.json {e.Message}, {e.StackTrace}, {e.InnerException}");
+            }
         }
 
         public static void VerificaArquivoExistente()

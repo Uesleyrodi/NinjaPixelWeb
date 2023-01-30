@@ -1,9 +1,15 @@
 {
+  //Título Funcionalidade
   "TituloFuncionalidade": "Login",
-  "BotaoEntrar": "ENTRAR",
-  "Senha": "pwd123",
-  "Email": "uesley@ninjapixel.com",
 
+  //Botão
+  "BotaoEntrar": "ENTRAR",
+
+  //Credenciais corretas
+  "Email": "uesley@ninjapixel.com",
+  "Senha": "pwd123",
+
+  //Credenciais Inválidas
   "EmailInvalido": "uesley@teste.com",
   "SenhaInvalida": "pwd123",
 

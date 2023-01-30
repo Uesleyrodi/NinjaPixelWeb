@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NinjaPixelWeb.PageObjects.CadastroProdutos;
 using NinjaPixelWeb.Steps;
 using NinjaPixelWeb.Steps.CadastroProdutos;
 using System;
@@ -16,7 +15,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Acessar 'Cadastro de Produto'");
             Console.WriteLine("Então: O sistema deverá direcionar usuário a funcionalidade 'Cadastro de Produto'.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.CheckNovoProduto();
         }
@@ -29,7 +28,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no botão [Cadastrar]");
             Console.WriteLine("Então: O sistema deverá impedir o cadastro de produtos e exibir mensagem de erro.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.ClickCadastrar();
             CadastroProdutosSteps.CheckMensagemNomeBranco();
@@ -44,7 +43,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
             Console.WriteLine("Então: O sistema deverá impedir o cadastro de produtos e exibir mensagem de erro.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetCategoriaEmBranco();
             CadastroProdutosSteps.CheckMensagemCategoriaBranco();
@@ -59,7 +58,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
             Console.WriteLine("Então: O sistema deverá impedir o cadastro de produtos e exibir mensagem de erro.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetPrecoEmBranco();
             CadastroProdutosSteps.CheckMensagemPrecoBranco();
@@ -73,7 +72,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
             Console.WriteLine("Então: O sistema deverá validar as informações e exibir o dado na listagem de 'Cadastro de Produtos'.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetCadastroSucesso();
             ListagemProdutosSteps.CheckProdutoCadastrado();
@@ -87,7 +86,7 @@ namespace NinjaPixelWeb.Feature
             Console.WriteLine("Quando: Clicar no botão 'Cadastrar'");
             Console.WriteLine("Então: O sistema deverá validar as informações e impedir a inclusão exibir mensagem de erro.");
 
-            LoginSteps.Login("uesley@ninjapixel.com", "pwd123");
+            LoginSteps.Login();
             CadastroProdutosSteps.ClickNovoProduto();
             CadastroProdutosSteps.SetCadastroSucesso();
             CadastroProdutosSteps.CheckMensagemCadastroDuplicado();
