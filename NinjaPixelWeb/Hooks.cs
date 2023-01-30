@@ -1,7 +1,10 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.Events;
 using System;
+using System.IO;
+using System.Threading;
 
 namespace NinjaPixelWeb
 {
@@ -15,7 +18,7 @@ namespace NinjaPixelWeb
         {
             //LigandoContainers();
             ChromeDriver = new ChromeDriver("Deploy");
-            ChromeDriver.Url = "http://localhost:3000/login";
+            TipoUrl();
             ChromeDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
             ChromeDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(60);
             ChromeDriver.Manage().Window.Maximize();
@@ -29,6 +32,24 @@ namespace NinjaPixelWeb
             Driver.Quit();
             ChromeDriver.Quit();
             //DesligandoContainer();
+        }
+
+        public void TipoUrl()
+        {
+            if (!File.Exists("C:\\NinjaPixelWeb\\NinjaPixelWeb\\Deploy\\HookConfig.json"))
+            {
+                Assert.Fail("HookConfig.json não foi encontrado");
+            }
+
+            try
+            {
+                string url = JObject.Parse(File.ReadAllText("C:\\NinjaPixelWeb\\NinjaPixelWeb\\Deploy\\HookConfig.json")).SelectToken("UrlDesenvolvimento").ToString();
+                ChromeDriver.Url = url;
+            }
+            catch(Exception e) 
+            {
+                Assert.Fail($"Não foi possível recuperar as informações do arquivo HookConfig.json {e.Message} {e.StackTrace} {e.InnerException}");
+            }
         }
 
         //public void LigandoContainers()

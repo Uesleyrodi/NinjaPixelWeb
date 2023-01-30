@@ -1,0 +1,5 @@
+{
+  "UrlDesenvolvimento": "http://localhost:3000/login",
+  "UrlHomologacao": "http://NinjaPixel.com.br/homolog",
+  "UrlProducao": "http://NinjaPixel.com.br"
+}

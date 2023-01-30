@@ -1,6 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json.Linq;
 using NinjaPixelWeb.PageObjects;
 using System;
+using System.IO;
 
 namespace NinjaPixelWeb.Steps
 {
@@ -8,11 +10,29 @@ namespace NinjaPixelWeb.Steps
     {
         public static void CheckLogin()
         {
+            //Garantir que o arquivo LoginConfig.json exista
+            if (!File.Exists("Deploy\\LoginConfig.json"))
+            {
+                Assert.Fail("LoginConfig.json não foi encontrado");
+            }
+
+            //Necessário tratar possíveis excessões vindas da Leitura do arquivo, precidso garantir que as variáveis também exista.
+            try
+            {
+                string TituloFuncionalidade = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("TituloFuncionalidade").ToString();
+                string TextoElemento = JObject.Parse(File.ReadAllText("Deploy\\LoginConfig.json")).SelectToken("BotaoEntrar").ToString();
+
+                Assert.AreEqual(TituloFuncionalidade, Driver.FindElement(LoginPage.TituloFuncionalidade).Text);
+                Assert.AreEqual(TextoElemento, Driver.FindElement(LoginPage.BtnEntrar).Text);
+            }
+            catch (Exception e)
+            {
+                Assert.Fail("Não foi possível recuperar informações do arquivo LoginConfig.json", e.Message, e.StackTrace, e.InnerException);
+            }
+
             Assert.IsTrue(Driver.FindElement(LoginPage.ImgLogo).Displayed);
-            Assert.AreEqual("Login", (Driver.FindElement(LoginPage.TituloFuncionalidade).Text));
-            Console.WriteLine(Driver.FindElement(LoginPage.TituloFuncionalidade).Text);
+            Assert.IsTrue(Driver.FindElement(LoginPage.Email).Displayed);
             Assert.IsTrue(Driver.FindElement(LoginPage.Senha).Displayed);
-            Assert.IsTrue(Driver.FindElement(LoginPage.BtnEntrar).Displayed);
         }
 
         public static void CheckMsgInformeEmail()
